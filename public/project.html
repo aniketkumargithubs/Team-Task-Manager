@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project | Team Task Manager</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="page-wrap">
+      <div class="container">
+        <header class="topbar">
+          <h1 id="project-title">Project</h1>
+          <div class="row">
+            <button id="back" class="btn-secondary">Back</button>
+            <button id="logout">Logout</button>
+          </div>
+        </header>
+
+        <section class="stack">
+          <article class="card">
+            <h2>Members</h2>
+            <div id="members-list"></div>
+          </article>
+
+          <article class="card">
+            <h2>Add Member (by email)</h2>
+            <form id="member-form">
+              <label class="field-label">Member Email</label>
+              <input name="email" type="email" required />
+              <label class="field-label">Project Role</label>
+              <select name="role">
+                <option value="Member">Member</option>
+                <option value="Admin">Admin</option>
+              </select>
+              <button type="submit">Add Member</button>
+            </form>
+          </article>
+
+          <article class="card">
+            <h2>Create Task</h2>
+            <form id="task-form">
+              <label class="field-label">Task Title</label>
+              <input name="title" required />
+              <label class="field-label">Description</label>
+              <textarea name="description"></textarea>
+              <label class="field-label">Status</label>
+              <select name="status">
+                <option value="Todo">Todo</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Done">Done</option>
+              </select>
+              <label class="field-label">Priority</label>
+              <select name="priority">
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+                <option value="Low">Low</option>
+              </select>
+              <label class="field-label">Due Date</label>
+              <input name="dueDate" type="date" />
+              <label class="field-label">Assign To</label>
+              <select name="assigneeId" id="assigneeId">
+                <option value="">Unassigned</option>
+              </select>
+              <button type="submit">Create Task</button>
+            </form>
+          </article>
+
+          <article class="card">
+            <h2>Tasks</h2>
+            <div id="tasks-list"></div>
+          </article>
+
+          <article class="card">
+            <h2>Kanban View</h2>
+            <div class="kanban">
+              <div>
+                <h3>Todo</h3>
+                <div id="col-todo"></div>
+              </div>
+              <div>
+                <h3>In Progress</h3>
+                <div id="col-progress"></div>
+              </div>
+              <div>
+                <h3>Done</h3>
+                <div id="col-done"></div>
+              </div>
+            </div>
+          </article>
+        </section>
+        <p id="message" class="message"></p>
+      </div>
+    </div>
+    <script src="/lib.js"></script>
+    <script src="/project.js"></script>
+  </body>
+</html>

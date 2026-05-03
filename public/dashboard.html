@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | Team Task Manager</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="page-wrap">
+      <div class="container">
+        <header class="topbar">
+          <h1>Team Task Manager</h1>
+          <div class="row">
+            <button id="goto-signup" class="btn-secondary">Add User</button>
+            <button id="logout">Logout</button>
+          </div>
+        </header>
+
+        <section class="stack">
+          <article class="card">
+            <h2 id="user-title">Dashboard</h2>
+            <p class="muted">Create projects, monitor status, and open project pages.</p>
+          </article>
+
+          <article class="card">
+            <h2>Create Project</h2>
+            <form id="project-form">
+              <label class="field-label">Project Name</label>
+              <input name="name" required />
+              <label class="field-label">Description</label>
+              <textarea name="description"></textarea>
+              <button type="submit">Create Project</button>
+            </form>
+          </article>
+
+          <article class="card">
+            <h2>Task Overview</h2>
+            <div class="grid-3">
+              <div class="metric"><h3>Total Tasks</h3><p id="m-total">0</p></div>
+              <div class="metric"><h3>In Progress</h3><p id="m-progress">0</p></div>
+              <div class="metric"><h3>Overdue</h3><p id="m-overdue">0</p></div>
+            </div>
+            <div class="grid-3" style="margin-top:10px">
+              <div class="metric"><h3>High Priority</h3><p id="m-high">0</p></div>
+              <div class="metric"><h3>Medium Priority</h3><p id="m-medium">0</p></div>
+              <div class="metric"><h3>Low Priority</h3><p id="m-low">0</p></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <h2>Quick Task Search</h2>
+            <div class="row">
+              <input id="search-text" placeholder="Search by title or description" />
+              <select id="filter-status">
+                <option value="">All Statuses</option>
+                <option value="Todo">Todo</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Done">Done</option>
+              </select>
+              <select id="filter-priority">
+                <option value="">All Priorities</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+              </select>
+            </div>
+            <div id="search-results" style="margin-top:12px"></div>
+          </article>
+
+          <article class="card">
+            <h2>Projects</h2>
+            <div id="projects-list" class="projects"></div>
+          </article>
+        </section>
+        <p id="message" class="message"></p>
+      </div>
+    </div>
+    <script src="/lib.js"></script>
+    <script src="/dashboard.js"></script>
+  </body>
+</html>
