@@ -61,7 +61,7 @@ A full-stack web app where users can sign up/login, create projects, manage team
    npm run dev
    ```
 4. Open:
-   - [http://localhost:5000](http://localhost:5000)
+   - [http://localhost:5000](http://localhost:3000)
 
 ## Railway Deployment (Mandatory)
 
